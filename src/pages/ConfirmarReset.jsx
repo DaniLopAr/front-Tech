@@ -18,7 +18,7 @@ export function ConfirmarReset() {
         }
         setLoading(true)
         try {
-            await api.post('/usuarios/confirmar-reset/', { uid, token, password })
+            await api.post('confirmar-reset/', { uid, token, password })
             toast.success('Contraseña actualizada')
             navigate('/login')
         } catch (err) {
