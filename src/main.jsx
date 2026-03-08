@@ -14,7 +14,10 @@ import { ProtectedRoute } from './Components/ProtectedRoute'
 import { Checkout } from './pages/Checkout'
 import { OrderSuccess } from './pages/OrderSuccess'
 import './i18n'
+import { SolicitarReset } from './pages/SolicitarReset'
+import { ConfirmarReset } from './pages/ConfirmarReset'
 
+// dentro de <Routes>:
 
 
 
@@ -40,6 +43,9 @@ createRoot(document.getElementById('root')).render(
                 <Checkout />
               </ProtectedRoute>
             } />
+            <Route path="/forgot-password" element={<SolicitarReset />} />
+            <Route path="/reset-password/:uid/:token" element={<ConfirmarReset />} />
+
             <Route path="/order-success" element={<OrderSuccess />} />
             <Route path="/producto/:id" element={<ProductDetail />} />
             <Route path="/" element={<Home />} />

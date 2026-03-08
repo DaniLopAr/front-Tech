@@ -416,9 +416,16 @@ export function Login() {
                                 </div>
                             </div>
 
-                            <div className="auth-forgot">
-                                <a href="#">¿Olvidaste tu contraseña?</a>
-                            </div>
+                            <button onClick={() => navigate('/forgot-password')} style={{
+                                background: 'none',
+                                border: 'none',
+                                color: 'var(--accent-violet)',
+                                fontSize: '0.78rem',
+                                cursor: 'pointer',
+                                padding: 0,
+                            }}>
+                                ¿Olvidaste tu contraseña?
+                            </button>
 
                             <button type="submit" className="auth-submit">
                                 Iniciar sesión →
