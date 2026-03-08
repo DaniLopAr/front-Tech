@@ -4,6 +4,8 @@ const api = axios.create({
     baseURL: 'https://web-production-6c2af.up.railway.app/api/',
 })
 
+
+
 api.interceptors.request.use(config => {
     const token = localStorage.getItem('access')
     if (token) {
