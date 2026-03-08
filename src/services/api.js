@@ -24,7 +24,7 @@ api.interceptors.response.use(
                 const refresh = localStorage.getItem('refresh')
                 if (!refresh) throw new Error('No refresh token')
 
-                const { data } = await axios.post('http://127.0.0.1:8000/api/token/refresh/', {
+                const { data } = await axios.post('https://web-production-6c2af.up.railway.app/api/token/refresh/', {
                     refresh
                 })
 

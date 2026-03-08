@@ -12,7 +12,7 @@ export function SolicitarReset() {
         e.preventDefault()
         setLoading(true)
         try {
-            await api.post('/usuarios/solicitar-reset/', { email })
+            await api.post('solicitar-reset/', { email })
             setEnviado(true)
         } catch (err) {
             setEnviado(true) // igual mostramos éxito por seguridad
