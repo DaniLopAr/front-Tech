@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useAuth } from '../context/AuthContext'
 import { useNavigate } from 'react-router-dom'
 import { authService } from "../services/authService";
+import { Toast } from 'react-hot-toast'
+
 
 export function Login() {
     const [tab, setTab] = useState("login"); // "login" | "register"
@@ -31,14 +33,14 @@ export function Login() {
             navigate('/')
         } catch (error) {
             console.log(error)
-            alert('Usuario o contraseña incorrectos')
+            Toast.error('Usuario o contraseña incorrectos')
         }
     }
 
     const handleRegister = async (e) => {
         e.preventDefault()
         if (registerData.password !== registerData.confirm) {
-            alert('Las contraseñas no coinciden')
+            Toast.error('Las contraseñas no coinciden')
             return
         }
         try {
@@ -48,10 +50,10 @@ export function Login() {
                 registerData.password,
                 registerData.confirm
             )
-            alert('¡Cuenta creada exitosamente!')
+            Toast.error('¡Cuenta creada exitosamente!')
             setTab('login')  // cambia al tab de login después de registrarse
         } catch (error) {
-            alert('Error al crear la cuenta, intenta de nuevo')
+            Toast.error('Error al crear la cuenta, intenta de nuevo')
         }
     };
 
