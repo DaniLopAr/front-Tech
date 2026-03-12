@@ -50,7 +50,7 @@ export function Login() {
                 registerData.password,
                 registerData.confirm
             )
-            toast.error('¡Cuenta creada exitosamente!')
+            toast.success('¡Cuenta creada exitosamente!')
             setTab('login')  // cambia al tab de login después de registrarse
         } catch (error) {
             toast.error('Error al crear la cuenta, intenta de nuevo')
